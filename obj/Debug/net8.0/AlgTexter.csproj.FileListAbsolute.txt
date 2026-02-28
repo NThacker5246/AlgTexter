@@ -1,0 +1,14 @@
+C:\Users\nicol\Desktop\Alogical\AlgTexter\obj\Debug\net8.0\AlgTexter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicol\Desktop\Alogical\AlgTexter\obj\Debug\net8.0\AlgTexter.AssemblyInfoInputs.cache
+C:\Users\nicol\Desktop\Alogical\AlgTexter\obj\Debug\net8.0\AlgTexter.AssemblyInfo.cs
+C:\Users\nicol\Desktop\Alogical\AlgTexter\obj\Debug\net8.0\AlgTexter.csproj.CoreCompileInputs.cache
+C:\Users\nicol\Desktop\Alogical\AlgTexter\obj\Debug\net8.0\AlgTexter.dll
+C:\Users\nicol\Desktop\Alogical\AlgTexter\obj\Debug\net8.0\refint\AlgTexter.dll
+C:\Users\nicol\Desktop\Alogical\AlgTexter\obj\Debug\net8.0\AlgTexter.pdb
+C:\Users\nicol\Desktop\Alogical\AlgTexter\bin\Debug\net8.0\AlgTexter.exe
+C:\Users\nicol\Desktop\Alogical\AlgTexter\bin\Debug\net8.0\AlgTexter.deps.json
+C:\Users\nicol\Desktop\Alogical\AlgTexter\bin\Debug\net8.0\AlgTexter.runtimeconfig.json
+C:\Users\nicol\Desktop\Alogical\AlgTexter\bin\Debug\net8.0\AlgTexter.dll
+C:\Users\nicol\Desktop\Alogical\AlgTexter\bin\Debug\net8.0\AlgTexter.pdb
+C:\Users\nicol\Desktop\Alogical\AlgTexter\obj\Debug\net8.0\AlgTexter.genruntimeconfig.cache
+C:\Users\nicol\Desktop\Alogical\AlgTexter\obj\Debug\net8.0\ref\AlgTexter.dll
