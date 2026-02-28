@@ -12,3 +12,4 @@ C:\Users\nicol\Desktop\Alogical\AlgTexter\bin\Debug\net8.0\AlgTexter.dll
 C:\Users\nicol\Desktop\Alogical\AlgTexter\bin\Debug\net8.0\AlgTexter.pdb
 C:\Users\nicol\Desktop\Alogical\AlgTexter\obj\Debug\net8.0\AlgTexter.genruntimeconfig.cache
 C:\Users\nicol\Desktop\Alogical\AlgTexter\obj\Debug\net8.0\ref\AlgTexter.dll
+C:\Users\nicol\Desktop\Alogical\AlgTexter\obj\Debug\net8.0\AlgTexter.sourcelink.json
