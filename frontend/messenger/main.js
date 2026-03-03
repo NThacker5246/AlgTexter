@@ -4,6 +4,7 @@ var out = document.getElementById('answer');
 var up = document.getElementById('up'), down = document.getElementById('down');
 
 var counter = 0;
+var chat = document.getElementById('chats');
 
 up.addEventListener("click", () => {++counter;});
 down.addEventListener("click", () => {--counter;});
@@ -21,7 +22,8 @@ button.addEventListener("click", function(e) {
 
 	var object = {
 		message: area.value,
-		loadprev: 0
+		loadprev: 0,
+		chat: parseInt(chat.value)
 	};
 
 	xhr.send(JSON.stringify(object));
@@ -37,9 +39,14 @@ function readText() {
 	}
 	var object = {
 		message: "",
-		loadprev: counter
+		loadprev: counter,
+		chat: parseInt(chat.value)
 	};
 	xhr.send(JSON.stringify(object));
+}
+
+function readChats() {
+	// body...
 }
 
 setInterval(readText, 1000);
