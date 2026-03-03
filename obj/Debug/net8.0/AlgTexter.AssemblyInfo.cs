@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AlgTexter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+124cf650cb63189b3f20f21e6533273498c55582")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d285d02e449e675adf82bc24496316895053876")]
 [assembly: System.Reflection.AssemblyProductAttribute("AlgTexter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AlgTexter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
