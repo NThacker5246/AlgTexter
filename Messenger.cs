@@ -24,28 +24,28 @@ public class Messenger {
 	public static void SendText(Promise into){
 
 		Indexer idex = JsonSerializer.Deserialize<Indexer>(File.ReadAllText("./messenger/indexer.json"));
-		if(!File.Exists($"./messenger/{idex.chats[into.chat]}{idex.length[into.chat]}.txt")){
-			FileStream stream1 = File.Create($"./messenger/{idex.chats[into.chat]}{idex.length[into.chat]}.txt");
+		if(!File.Exists($"./messenger/{idex.chats[into.chat]}_{idex.length[into.chat]}.txt")){
+			FileStream stream1 = File.Create($"./messenger/{idex.chats[into.chat]}_{idex.length[into.chat]}.txt");
 			stream1.Close();
 		}
-		string text = File.ReadAllText($"./messenger/{idex.chats[into.chat]}{idex.length[into.chat]}.txt");
+		string text = File.ReadAllText($"./messenger/{idex.chats[into.chat]}_{idex.length[into.chat]}.txt");
 		if(text.Length > 64) {
 			idex.length[into.chat] += 1;
 			File.WriteAllText("./messenger/indexer.json", JsonSerializer.Serialize(idex));
-			FileStream stream = File.Create($"./messenger/{idex.chats[into.chat]}{idex.length[into.chat]}.txt");
+			FileStream stream = File.Create($"./messenger/{idex.chats[into.chat]}_{idex.length[into.chat]}.txt");
 			stream.Close();
 			text = "";
 		}
 		Console.WriteLine(into.message);
 		text += "<br>";
 		text += into.message;
-		File.WriteAllText($"./messenger/{idex.chats[into.chat]}{idex.length[into.chat]}.txt", text);
+		File.WriteAllText($"./messenger/{idex.chats[into.chat]}_{idex.length[into.chat]}.txt", text);
 	}
 	public static string GetText(Promise into){
 		Indexer idex = JsonSerializer.Deserialize<Indexer>(File.ReadAllText("./messenger/indexer.json"));
 		into.loadprev = clamp(into.loadprev, 0, idex.length[into.chat]);
-		if(!File.Exists($"./messenger/{idex.chats[into.chat]}{idex.length[into.chat] - into.loadprev}.txt")) return "NoChat";
-		return File.ReadAllText($"./messenger/{idex.chats[into.chat]}{idex.length[into.chat] - into.loadprev}.txt");
+		if(!File.Exists($"./messenger/{idex.chats[into.chat]}_{idex.length[into.chat] - into.loadprev}.txt")) return "NoChat";
+		return File.ReadAllText($"./messenger/{idex.chats[into.chat]}_{idex.length[into.chat] - into.loadprev}.txt");
 	}
 
 	static int clamp(int a, int n, int x){
