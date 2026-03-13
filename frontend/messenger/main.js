@@ -222,7 +222,7 @@ button.addEventListener("click", function(e) {
 	}
 
 	var object = {
-		message: area.value,
+		message: convertMD(area.value),
 		loadprev: 0,
 		chat: parseInt(chat.value),
 		chatName: "",
