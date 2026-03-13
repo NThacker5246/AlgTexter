@@ -222,7 +222,7 @@ button.addEventListener("click", function(e) {
 	}
 
 	var object = {
-		message: convertMD(area.value),
+		message: "<div class=\"message\"><div class=\"message-header\"><img src=\"https://placehold.co/100x100\" class=\"user-image\"><span class=\"user-name\">" + getCookie("login") + "</span></div><div class=\"message-body\">" + convertMD(area.value) + "</div></div>",
 		loadprev: 0,
 		chat: parseInt(chat.value),
 		chatName: "",

@@ -49,7 +49,7 @@ public class Messenger {
 			Console.WriteLine("Created");
 		}
 		string text = File.ReadAllText($"./messenger/{sdex.servers[into.server]}/{idex.chats[into.chat]}_{idex.length[into.chat]}.txt");
-		if(text.Length > 64) {
+		if(text.Length > 512) {
 			idex.length[into.chat] += 1;
 			File.WriteAllText($"./messenger/{sdex.servers[into.server]}/indexer.json", JsonSerializer.Serialize(idex));
 			FileStream stream = File.Create($"./messenger/{sdex.servers[into.server]}/{idex.chats[into.chat]}_{idex.length[into.chat]}.txt");
@@ -57,7 +57,6 @@ public class Messenger {
 			text = "";
 		}
 		Console.WriteLine(into.message);
-		text += "<br>";
 		text += into.message;
 		File.WriteAllText($"./messenger/{sdex.servers[into.server]}/{idex.chats[into.chat]}_{idex.length[into.chat]}.txt", text);
 	}

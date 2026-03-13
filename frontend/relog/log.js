@@ -18,6 +18,7 @@ form.onsubmit = function(e) {
 		if(xhr.readyState == 4){
 			switch(xhr.responseText){
 				case "Logined":
+					setCookie("login", login.value);
 					location.href = "http://127.0.0.1/messenger/";
 					break;
 				case "Not user":

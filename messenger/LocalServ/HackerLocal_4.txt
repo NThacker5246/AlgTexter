@@ -1,0 +1,1 @@
+<br><div class="message"><div class="message-header"><img src="https://placehold.co/100x100" class="user-image"><span class="user-name"></span></div><div class="message-body">Hello, i'm <i>@NThacker</i><br></div></div>

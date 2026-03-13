@@ -18,7 +18,7 @@ form.onsubmit = function(e) {
 		if(xhr.readyState == 4){
 			switch(xhr.responseText){
 				case "Registered":
-					location.href = "http://127.0.0.1/messenger/";
+					location.href = "http://127.0.0.1/relog/log.html";
 					break;
 				case "User exists":
 					cout.innerHTML = "User ound with this login. Try Log in";
