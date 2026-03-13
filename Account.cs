@@ -7,9 +7,10 @@ using System.Text.Json;
 using System.Linq;
 using System.Numerics;
 
+[Serializable]
 public struct User {
-	public string username;
-	public ulong pwd;
+	public string username {get; set;}
+	public ulong pwd {get; set;}
 }
 
 public class Account {

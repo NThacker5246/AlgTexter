@@ -19,6 +19,10 @@ public struct Promise {
 	public string fileName {get; set;}
 	public string fileBody {get; set;}
 	public int fileOffset {get; set;}
+
+	//account
+	public string userName {get; set;}
+	public ulong passHash {get; set;}
 	
 }
 [Serializable]
