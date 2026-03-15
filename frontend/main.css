@@ -2,6 +2,8 @@
   box-sizing: border-box;
   /*margin: 0px !important;*/
   position: static !important;
+  scrollbar-color: rgba(82, 115, 199, 1) rgba(62, 59, 81, 1);
+  font-family: Inter;
 }
 html, body {
   font-size: 14px;
@@ -20,7 +22,7 @@ html, body {
 }
 .desktop {
   width: 100%;
-  height: calc(100% - 100px);
+  height: 90%;
   background: url("../images/v15_2.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -79,7 +81,7 @@ html, body {
 
 .servers-panel {
   width: calc(100% - 20px);
-  height: 190px;
+  height: fit-content;
   background: rgba(42,40,58,1);
   padding: 5px 10px;
   margin: 10px;
@@ -105,25 +107,38 @@ html, body {
   border-bottom-right-radius: 2px;
   overflow: hidden;
 }
-.servers {
-  min-width: calc(100% - 20px);
-  height: 105px;
+.servers, .friends {
+  /*min-width: calc(100% - 20px);*/
+  /*width: fit-content;*/
   background: url("../images/v21_11.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  margin: 10px;
+  /*margin: 10px;*/
+  /*margin-bottom: 80px;*/
   opacity: 1;
   display: flex;
   flex-direction: row;
   align-content: center;
   align-items: center;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  justify-content: space-around;
+  /*overflow-x: scroll;*/
+  overflow: hidden;
   flex-wrap: wrap;
   flex-grow: inherit;
   flex-basis: inherit;
+}
 
+.servers {
+  height: 105px;
+}
+.friends {
+  height: 70px;
+}
+
+.servers-header, .friends-header {
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 .v21_2 {
   width: 80px;
@@ -195,9 +210,9 @@ html, body {
   border-bottom-right-radius: 20px;
   overflow: hidden;
 }
-.friends {
+/*friends {
   width: calc(100% - 20px);
-  height: 60px;
+  height: 60px 
   background: url("../images/v22_17.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -208,7 +223,7 @@ html, body {
   top: 110px;
   left: 10px;
   overflow: hidden;
-}
+}*/
 .v22_18 {
   width: 60px;
   height: 60px;
@@ -321,6 +336,13 @@ html, body {
   border-bottom-right-radius: 2px;
   overflow: hidden;
 }
+
+.chats {
+  max-height: 50%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 .chat-item {
   width: calc(100% - 20px);
   height: 50px;
@@ -434,7 +456,7 @@ html, body {
 }
 .message-send {
   width: 100%;
-  height: 100px;
+  height: 10%;
   background: rgba(86,88,121,1);
   /*margin: 20px;*/
   opacity: 1;
@@ -444,7 +466,7 @@ html, body {
 }
 .profile-left {
   width: 20%;
-  height: 100px;
+  height: 100%;
   background: rgba(86,88,121,1);
   padding: 10px 30px;
   /*margin: 20px;*/
@@ -461,8 +483,8 @@ html, body {
   align-items: center;
 }
 .v28_67 {
-  width: 50px;
-  height: 50px;
+  width: 12%;
+  height: 50%;
   background: rgba(69,72,95,1);
   opacity: 1;
   position: absolute;
@@ -471,8 +493,8 @@ html, body {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15000000596046448);
 }
 .v33_4 {
-  width: 240px;
-  height: 50px;
+  width: 50%;
+  height: 40%;
   background: rgba(69,72,95,1);
   padding: 10px 10px;
   margin: 10px;
@@ -480,34 +502,29 @@ html, body {
   position: absolute;
   top: 25px;
   left: 100px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-radius: 4%;
   overflow: hidden;
 }
 .v33_2 {
-  width: 70px;
-  height: 70px;
+  width: 16%;
+  height: 70%;
   background: rgba(68,72,94,1);
   opacity: 1;
   position: absolute;
   top: 15px;
   left: 360px;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
+  border-radius: 8%;
   overflow: hidden;
 }
 .message-bar {
   width: 60%;
-  height: 100px;
+  height: 100%;
   background: url("../images/v8_3.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  padding: 24px 0px;
+  padding-left: 20px;
+  padding-right: 20px;
   /*margin: 35px;*/
   opacity: 1;
   position: absolute;
@@ -521,8 +538,8 @@ html, body {
   align-content: center;
 }
 .v8_4 {
-  width: 52px;
-  height: 52px;
+  width: 4.5%;
+  height: 50%;
   background: rgba(120,122,149,1);
   opacity: 1;
   position: absolute;
@@ -532,11 +549,11 @@ html, body {
   box-shadow: 0px 4px 4px rgba(0.0470588244497776, 0.0470588244497776, 0.05098039284348488, 0.05000000074505806);
 }
 .input-panel {
-  width: calc(85% - 87px - 52px - 100px);
-  height: 44px;
+  width: 70%;
+  height: 70%;
   background: rgba(72,64,93,1);
-  padding: 10px 20px;
-  margin: 10px;
+  padding: 10px;
+  /*margin: 10px;*/
   opacity: 1;
   position: absolute;
   top: 28px;
@@ -546,18 +563,19 @@ html, body {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   overflow-y: scroll;
+  font-size: 5vw;
 }
 .v33_11 {
   color: rgba(255,255,255,1);
-  font-family: "Consolas";
+  font-family: Inter;
   font-weight: Extra Bold;
   font-size: 20px;
   opacity: 1;
   text-align: left;
 }
 .button {
-  width: 52px;
-  height: 52px;
+  width: 5%;
+  height: 57.5%;
   background: rgba(60,64,99,1);
   opacity: 1;
   position: absolute;
@@ -568,10 +586,11 @@ html, body {
 }
 .message-right-panel {
   width: 20%;
-  height: 100px;
+  height: 100%;
   background: rgba(86,88,121,1);
-  padding: 10px 20px;
+  /*padding: 10px 20px;*/
   /*margin: 16px;*/
+  padding: 5px;
   opacity: 1;
   position: absolute;
   top: 0px;
@@ -583,19 +602,21 @@ html, body {
   justify-content: space-around;
   align-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 .v32_4 {
-  width: 70px;
-  height: 70px;
+  width: 17.5%;
+  height: 70%;
   background: rgba(68,72,94,1);
   opacity: 1;
   position: absolute;
   top: 15px;
   left: 20px;
-  border-top-left-radius: 25px;
+  border-radius: 30%;
+  /*border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
+  border-bottom-right-radius: 25px;*/
   overflow: hidden;
 }
 .v32_6 {
