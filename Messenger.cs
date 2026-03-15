@@ -93,6 +93,7 @@ public class Messenger {
 	}
 	public static string GetAllIndexator(Promise into){
 		ServerIndexer sdex = JsonSerializer.Deserialize<ServerIndexer>(File.ReadAllText("./messenger/indexator.json"));
+		if(into.server >= sdex.servers.Length) return "";
 		return File.ReadAllText($"./messenger/{sdex.servers[into.server]}/indexer.json");
 	}
 

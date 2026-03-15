@@ -5,11 +5,13 @@ var up = document.getElementById('up'), down = document.getElementById('down');
 var createChat = document.getElementById('createchat');
 var createServer = document.getElementById('createserver');
 
+var chat_i = 0;
+var server_i = 0;
 var counter = 0;
-var chat = document.getElementById('chats');
+// var chat = document.getElementById('chats');
 var newchatname = document.getElementById('chatname');
 
-var server = document.getElementById('servers');
+// var server = document.getElementById('servers');
 var newservname = document.getElementById('servname');
 
 var fila = document.getElementById('fila');
@@ -20,6 +22,9 @@ var fbase = {"0":52,"1":53,"2":54,"3":55,"4":56,"5":57,"6":58,"7":59,"8":60,"9":
 
 var loadfilebut = document.getElementById('loadfilebut');
 var filetype = document.getElementById('filetype');
+
+var servers_get = document.getElementById('serverlist');
+var chats_get = document.getElementById('chatlist');
 
 loadfilebut.addEventListener("click", function (e) {
 	fila.files[0].bytes().then((o) => {
@@ -46,9 +51,9 @@ loadfilebut.addEventListener("click", function (e) {
 		var msg = {
 			message: link,
 			loadprev: 0,
-			chat: parseInt(chat.value),
+			chat: parseInt(chat_i),
 			chatName: "",
-			server: parseInt(server.value)
+			server: parseInt(server_i)
 		};
 		xhr.send(JSON.stringify(msg));
 
@@ -224,9 +229,9 @@ button.addEventListener("click", function(e) {
 	var object = {
 		message: "<div class=\"message\"><div class=\"message-header\"><img src=\"https://placehold.co/100x100\" class=\"user-image\"><span class=\"user-name\">" + getCookie("login") + "</span></div><div class=\"message-body\">" + convertMD(area.value) + "</div></div>",
 		loadprev: 0,
-		chat: parseInt(chat.value),
+		chat: parseInt(chat_i),
 		chatName: "",
-		server: parseInt(server.value)
+		server: parseInt(server_i)
 	};
 
 	xhr.send(JSON.stringify(object));
@@ -248,7 +253,7 @@ createChat.addEventListener("click", function(e) {
 		loadprev: 0,
 		chat: 0,
 		chatName: newchatname.value,
-		server: parseInt(server.value),
+		server: parseInt(server_i),
 		serverName: ""
 	};
 
@@ -281,7 +286,7 @@ createServer.addEventListener("click", function(e) {
 
 function readText() {
 	var xhr = new XMLHttpRequest();
-	if(chat.value == "") return;
+	// if(chat_i == "") return;
 	xhr.open("POST", "127.0.0.1/api/read");
 	xhr.onreadystatechange = function() {
 		if(xhr.readyState == 4){
@@ -291,9 +296,9 @@ function readText() {
 	var object = {
 		message: "",
 		loadprev: counter,
-		chat: parseInt(chat.value),
+		chat: parseInt(chat_i),
 		chatName: "",
-		server: parseInt(server.value),
+		server: parseInt(server_i),
 		serverName: ""
 	};
 	xhr.send(JSON.stringify(object));
@@ -301,17 +306,19 @@ function readText() {
 
 function readChats() {
 	var xhr = new XMLHttpRequest();
-	if(server.value == "") return;
+	// if(server_i == "") return;
 	xhr.open("POST", "127.0.0.1/api/getindexer");
 	xhr.onreadystatechange = function() {
 		if(xhr.readyState == 4 && xhr.status == 200){
 			var obj = JSON.parse(xhr.responseText);
-			var temp = chat.value;
-			chat.innerHTML = "";
+			var temp = chat_i;
+			// chat.innerHTML = "";
+			chats_get.innerHTML = "";
 			for (var i = 0; i < obj.chats.length; i++) {
-				chat.innerHTML += "<option value=\"" + i + "\">" + obj.chats[i] + "</option>";
+				// chat.innerHTML += "<option value=\"" + i + "\">" + obj.chats[i] + "</option>";
+				chats_get.innerHTML += "<div class=\"chat-item\" onclick=\"chat_i = " + i + ";\"><div class=\"chat-left\"></div><div class=\"chat-name\">" + obj.chats[i] + "</div></div>"
 			}			
-			chat.value = temp;
+			chat_i = temp;
 		}
 	}
 
@@ -320,7 +327,7 @@ function readChats() {
 		loadprev: 0,
 		chat: 0,
 		chatName: "",
-		server: parseInt(server.value),
+		server: parseInt(server_i),
 		serverName: ""
 	};
 
@@ -334,12 +341,15 @@ function readServers() {
 		if(xhr.readyState == 4 && xhr.status == 200){
 			var obj = JSON.parse(xhr.responseText);
 			console.log(obj);
-			var temp = server.value;
-			server.innerHTML = "";
+			var temp = server_i;
+			// server.innerHTML = "";
+			servers_get.innerHTML = "";
+			servers_get.style.width = 85*obj.servers.length + "px";
 			for (var i = 0; i < obj.servers.length; i++) {
-				server.innerHTML += "<option value=\"" + i + "\">" + obj.servers[i] + "</option>";
+				// server.innerHTML += "<option value=\"" + i + "\">" + obj.servers[i] + "</option>";
+				servers_get.innerHTML += "<div class=\"server-item\" onclick=\"server_i = " + i + "; chat_i = 0;\">" + obj.servers[i] + "</div>";
 			}			
-			server.value = temp;
+			server_i = temp;
 		}
 	}
 
