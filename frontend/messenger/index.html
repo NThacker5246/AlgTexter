@@ -15,26 +15,26 @@
 						
 					<!-- </div> -->
 					<div class="servers-header">
-						<div class="servers" style="width: 600px;">
-							<div class="v21_2">
+						<div class="servers" id="serverlist" style="width: 600px;">
+							<div class="server-item">
 								LocalServ
 							</div>
-							<div class="v21_2">
+							<div class="server-item">
 								First
 							</div>
-							<div class="v21_2">
+							<div class="server-item">
 								Second
 							</div>
-							<div class="v21_2">
+							<div class="server-item">
 								Third
 							</div>
-							<div class="v21_2">
+							<div class="server-item">
 								NThackerLive
 							</div>
-							<div class="v21_2">
+							<div class="server-item">
 								AlgStd
 							</div>
-							<div class="v21_2">
+							<div class="server-item">
 								TheAngleCommunity
 							</div>
 						</div>
@@ -50,13 +50,9 @@
 
 					</div> -->
 				</div>
-				<div class="chats">
-					<div class="chat-item">
-						<div class="chat-left">
-
-						</div>
-						<div class="chat-name">SampleChat</div>
-					</div>
+				<div class="chats" id="chatlist">
+					<div class="chat-item"><div class="chat-left"></div><div class="chat-name">SampleChat</div></div>
+					
 					<div class="chat-item">
 						<div class="chat-left">
 
@@ -94,10 +90,22 @@
 						<div class="chat-name">SampleChat</div>
 					</div>
 				</div>
+				<div class="chatadder">
+					<input type="text" name="chatname" id="chatname"><br>
+					<button id="createchat">CreateChat</button>
+				</div>
+				<div class="serveradder">
+					<input type="text" name="servname" id="servname"><br>
+					<button id="createserver">CreateServer</button>
+				</div>
 			</div>
 			<div class="background-panel">
-				<div class="answer-panel">
+				<div class="answer-panel" id="answer">
 				
+				</div>
+				<div class="controller">
+					<button id="up">Up</button>
+					<button id="down">Down</button>
 				</div>
 			</div>
 			<div class="right-panel">
@@ -117,13 +125,21 @@
 				</div>
 			</div>
 			<div class="message-bar">
-				<div class="v8_4">
-
+				<div class="v8_4"></div>
+				<div class="fileworker">
+					<input type="file" name="file" id="fila">
+					<select id="filetype">
+						<option value="down">As downloadable</option>
+						<option value="img">As image</option>
+						<option value="msc">As music</option>
+						<option value="vid">As video</option>
+					</select>
+					<button id="loadfilebut">LoadFile</button>
 				</div>
-				<textarea class="v33_11 input-panel"></textarea>
-				<div class="button">
-
-				</div>
+				<textarea class="v33_11 input-panel" id="message"></textarea>
+				<button type="button" class="button" id="send">
+					Send
+				</button>
 			</div>
 			<div class="message-right-panel">
 				<div class="v32_4">
@@ -144,47 +160,11 @@
 			</div>
 		</div>
 	</div>
-
-
-
-
-
-
-
-
-	<!-- 
-	<div>
-		<button id="up">Up</button>
-		<button id="down">Down</button>
-		<br>
-		<div id="answer"></div>
-		<textarea id="message" placeholder="Here text"></textarea><br>
-		<button id="send">Send</button>
-		<br>
-		<select id="chats">
-		</select>
-		<br>
-		<input type="text" name="chatname" id="chatname">
-		<button id="createchat">CreateChat</button><br>
-		<select id="servers">
-			<option value="2">Chat2</option>
-		</select>
-		<br>
-		<input type="text" name="servname" id="servname">
-		<button id="createserver">CreateServer</button><br>
-	</div>
-	<input type="file" name="file" id="fila">
-	<select id="filetype">
-		<option value="down">As downloadable</option>
-		<option value="img">As image</option>
-		<option value="msc">As music</option>
-		<option value="vid">As video</option>
-	</select>
-	<button id="loadfilebut">LoadFile</button>
-	<pre id="fileout"></pre>
+	
 	<script type="text/javascript" src="../markdown.js"></script>
 	<script type="text/javascript" src="../cookie.js"></script>
 	<script type="text/javascript" src="main.js"></script> 
-	-->
+
+
 </body>
 </html>
